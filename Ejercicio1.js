@@ -101,3 +101,37 @@ let programadores = [
     ],
   },
 ];
+
+
+let tareaMaxima = {
+  nombreTarea: "",
+  tiempoDesarrollo: 0
+};
+let nombreProgramador = "";
+
+//Bucle para recorrer el array de programadores
+for (let i = 0; i < programadores.length; i++) {
+  let programador = programadores[i];
+
+  //Bucle para recorrer las tareas de cada programadors
+  for (let j = 0; j < programador.tareas.length; j++) {
+      let tarea = programador.tareas[j];
+      let tiempo = parseFloat(tarea.tiempoDesarrollo.split(" ")[0]);
+
+      //Comparación del tiempo de la tarea con el tiempo de desarrollo máximo encontrado
+      if (tiempo > tareaMaxima.tiempoDesarrollo) {
+
+        //Actualización del nombre de la tarea
+          tareaMaxima.nombreTarea = tarea.nombreTarea;
+
+        //Actualización del tiempo de la nueva tarea con mayor tiempo
+          tareaMaxima.tiempoDesarrollo = tiempo;
+
+          //Actualización del nombre del programador que realiza la tarea con más tiempo de desarrollo
+          nombreProgramador = programador.nombre;
+      }
+  }
+}
+
+console.log("La tarea con mayor tiempo de desarrollo es " + tareaMaxima.nombreTarea + " con " + tareaMaxima.tiempoDesarrollo + " horas");
+console.log("El programador que realiza esta tarea es " + nombreProgramador);

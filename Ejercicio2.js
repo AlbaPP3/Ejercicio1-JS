@@ -86,3 +86,21 @@ let programadores = [
     ],
   },
 ];
+
+
+
+//Copia del array programadores usando JSON.parse(JSON.stringify(programadores))
+let programadoresCopia = JSON.parse(JSON.stringify(programadores));
+
+//Bucle para recorrer programadores
+for (let i = 0; i < programadoresCopia.length; i++) {
+
+  //Bucle para recorrer la tarea dentro de esos objetos programador
+  for (let j = 0; j < programadoresCopia[i].tareas.length; j++) {
+
+    //Asignación del nuevo tiempo de desarrollo en 0
+    programadoresCopia[i].tareas[j].tiempoDesarrollo = "0 horas";
+  }
+}
+
+console.log(programadoresCopia);
