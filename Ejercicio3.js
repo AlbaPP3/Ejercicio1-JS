@@ -86,3 +86,25 @@ let programadores = [
     ],
   },
 ];
+
+
+//Copia del array original de programadores
+let programadoresCopy = JSON.parse(JSON.stringify(programadores));
+
+//Bucle para recorrer los programadores y encontrar al programador "Manuel"
+for (let i = 0; i < programadoresCopy.length; i++) {
+
+  if (programadoresCopy[i].nombre === "Manuel") {
+    //Bucle para recorrer las tareas de "Manuel"
+    for (let j = 0; j < programadoresCopy[i].tareas.length; j++) {
+      //Si se trata de las tareas "Tarea 4.2" o "Tarea 4.3" se modifica el tie mpo de desarrollo de estas a 0 horas 
+      if (
+        programadoresCopy[i].tareas[j].nombreTarea === "Tarea 4.2" ||
+        programadoresCopy[i].tareas[j].nombreTarea === "Tarea 4.3"
+      ) {
+        programadoresCopy[i].tareas[j].tiempoDesarrollo = "0 horas";
+      }
+    }
+  }
+}
+console.log(programadoresCopy);

@@ -1,20 +1,4 @@
 'Use strict';
-//Bucle para recorrer los programadores y sus tareas
-for(let i = 0;i < programadores.length; i++){
-  const tareas = programadores[i].tareas;
-}
-//Array para guardar las tareas de cada programador que antes hemos recorrido 
-programadoresTareas.push(tareas);
-//Bucle para recorrer este array de tareas que hemos guardado
-for(let t = 0; t < tareas.length; t++){
-  //Array para almacenar el tiempo de desarollo de cada programador
-  tiempoDesarrollo.push(tareas[t].tiempoDesarrollo);
-  tiempoMaximo = tiempoMaximo(tiempoDesarrollo);
-
-  if(tiempoMaximo == programadores[i].tareas[t].tiempoDesarrollo){
-    TareaMayorTiempo = programadores[i].tareas[t].idTarea;
-  }
-}
 let programadores = [
   {
     nombre: 'Juan',
@@ -107,6 +91,7 @@ let tareaMaxima = {
   nombreTarea: "",
   tiempoDesarrollo: 0
 };
+
 let nombreProgramador = "";
 
 //Bucle para recorrer el array de programadores
