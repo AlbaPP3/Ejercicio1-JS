@@ -86,3 +86,23 @@ let programadores = [
     ],
   },
 ];
+let programadoresConTareasDeMasDe25Horas = [];
+
+//Bucle for para recorrer los programadores
+for (let i = 0; i < programadores.length; i++) {
+  let programador = programadores[i];
+
+  //Bucle para recorrer las tareas de cada programador
+  for (let j = 0; j < programador.tareas.length; j++) {
+    let tarea = programador.tareas[j];
+
+    //Condicion para comprobar si el tiempo de desarrollo es mayor a 25 horas
+    if (parseInt(tarea.tiempoDesarrollo.split(" ")[0]) > 25) {
+
+      //Nuevo array para guardar los programadores cuya tarea cumpla la condición
+      programadoresConTareasDeMasDe25Horas.push(programador);
+      break;
+    }
+  }
+}
+console.log(programadoresConTareasDeMasDe25Horas);
