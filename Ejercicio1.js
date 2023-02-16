@@ -120,3 +120,16 @@ for (let i = 0; i < programadores.length; i++) {
 
 console.log("La tarea con mayor tiempo de desarrollo es " + tareaMaxima.nombreTarea + " con " + tareaMaxima.tiempoDesarrollo + " horas");
 console.log("El programador que realiza esta tarea es " + nombreProgramador);
+
+//Método reduce() para iterar sobre cada programador y encontrar la tarea con el tiempo de desarrollo más alto
+const tareaMasLarga = programadores.reduce((tareaMasLarga, programador) => {
+  //Función find() para buscar la tarea correspondiente en el array de tareas del programador
+  return programador.tareas.find(tarea => {
+    const tiempo = parseFloat(tarea.tiempoDesarrollo);
+    //Función Math.max() compara el tiempo de desarrollo de la tarea actual con el tiempo de desarrollo de la tarea más larga encontrada hasta el momento.Si la más larga es la actual te devuelve la actual, si no devuelve la más larga encontrada hasta el momento
+    return tiempo === Math.max(tiempo, parseFloat(tareaMasLarga.tiempoDesarrollo));
+  }) || tareaMasLarga;
+  //Inicialización de la variable tareaMasLarga como un objeto vacío con un tiempo de desarrollo inicial de "0 horas"
+}, {tiempoDesarrollo: "0 horas"});
+
+console.log(tareaMasLarga);
