@@ -106,3 +106,15 @@ for (let i = 0; i < programadores.length; i++) {
   }
 }
 console.log(programadoresConTareasDeMasDe25Horas);
+
+//He mirado hacerlo con JSON.parse(JSON.stringify(programadores)) para  hacer una copia del array programadores y después usar filter() para crear un nuevo array programadoresConTareasLargas que contenga solo los programadores que tienen tareas con un tiempoDesarrollo superior a 25 horas.No sabia muy bien cómo seguir, cómo comprobar los tiempos de desarrollo
+
+/*let programadoresCopia = JSON.parse(JSON.stringify(programadores));
+
+let programadoresConTareasLargas = programadoresCopia.filter(programador => {
+  return programador.tarea.
+
+});
+});
+
+console.log(programadoresConTareasLargas);*/
