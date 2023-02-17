@@ -108,3 +108,25 @@ for (let i = 0; i < programadoresCopy.length; i++) {
   }
 }
 console.log(programadoresCopy);
+
+//He estado investigando hacerlo con el método slice() y forEach() pero no sabia muy bien cómo hacerlo
+
+//Con map generamos una nueva copia del array original
+let programadoresCopia = programadores.map((programador) => {
+
+  //En la devolución del primer map verifica si el nombre del programador es "Manuel"
+  if (programador.nombre === "Manuel") {
+
+    //Si el nombre del programador es "Manuel" utilizamos otro map para iterar entre las tareas de este programador
+    programador.tareas = programador.tareas.map((tarea) => {
+
+      //En la devolución de este segundo map, se utiliza un operador ternario para verificar si la tarea es la 4.2 o 4.3 y modificar su tiempoDesarrollo a "0 horas"
+      return tarea.idTarea === 4.2 || tarea.idTarea === 4.3
+        ? { ...tarea, tiempoDesarrollo: "0 horas" }
+        : tarea;
+    });
+  }
+  return programador;
+});
+
+console.log(programadoresCopia);
