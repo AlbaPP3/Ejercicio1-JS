@@ -104,3 +104,5 @@ for (let i = 0; i < programadoresCopia.length; i++) {
 }
 
 console.log(programadoresCopia);
+
+//He investigado hacerlo con el método map y con forEach pero no he terminado de entender cómo hacerlo
